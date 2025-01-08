@@ -224,31 +224,32 @@
 ;;(require 'init-blog)
 
 (require 'eaf)
+
 (require 'eaf-browser)
 (require 'eaf-file-browser)
-;;(require 'eaf-file-manager)
-;;(require 'eaf-file-sender)
-;;;;;(require 'eaf-image-viewer)
-;;;;;(require 'eaf-markdown-previewer)
-;;;;;;;(require 'eaf-mermaid)
+(require 'eaf-file-manager)
+(require 'eaf-file-sender)
+;;;(require 'eaf-image-viewer)
+;;;(require 'eaf-markdown-previewer)
+;;;;;(require 'eaf-mermaid)
 ;;(require 'eaf-mindmap)
-;;;;;(require 'eaf-music-player)
-;;(require 'eaf-org-previewer)
+;;;(require 'eaf-music-player)
+;;;(require 'eaf-org-previewer)
 (require 'eaf-pdf-viewer)
-;;;;;(require 'eaf-system-monitor)
-;;(require 'eaf-terminal)
-;;;(require 'eaf-video-player)
-;;;(require 'eaf-netease-cloud-music)
+;;;(require 'eaf-system-monitor)
+(require 'eaf-terminal)
+;;(require 'eaf-video-player)
+;;(require 'eaf-netease-cloud-music)
 
 
-(defun adviser-find-file (orig-fn file &rest args)
-  (let ((fn (if (commandp 'eaf-open) 'eaf-open orig-fn)))
-    (pcase (file-name-extension file)
-      ("pdf"  (apply fn file nil))
-      ("epub" (apply fn file nil))
-      (_      (apply orig-fn file args)))))
-
-(advice-add #'find-file :around #'adviser-find-file)
+;;(defun adviser-find-file (orig-fn file &rest args)
+;;  (let ((fn (if (commandp 'eaf-open) 'eaf-open orig-fn)))
+;;    (pcase (file-name-extension file)
+;;      ("pdf"  (apply fn file nil))
+;;      ("epub" (apply fn file nil))
+;;      (_      (apply orig-fn file args)))))
+;;
+;;(advice-add #'find-file :around #'adviser-find-file)
 
 
 
@@ -257,7 +258,7 @@
 
 (require 'init-enhance)
 
-(require 'init-rime)
+;;(require 'init-rime)
 ;;(require 'init-nox)
 
 ;;---------------------------------------------------------------

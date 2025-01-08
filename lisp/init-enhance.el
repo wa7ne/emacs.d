@@ -12,9 +12,10 @@
 (setq tags-add-tables nil)
 (require 'thing-edit)
 ;;(require 'aweshell)
-(require 'snails)
+;;(require 'snails)
 (maybe-require-package 'all-the-icons)
 (require 'all-the-icons)
+
 (require 'awesome-tab)
 (awesome-tab-mode t)
 (setq awesome-tab-style "bar")
@@ -23,13 +24,10 @@
 (require 'all-the-icons-ibuffer)
 (all-the-icons-ibuffer-mode 1)
 
-;;;; disable frame title. I think it is useless.
-(setq default-frame-alist '((undecorated . t)))
-(setq frame-resize-pixelwise t)
+;;;; disable frame title. I think it is useless.  这个配置有问题
+;;(setq default-frame-alist '((undecorated . t)))
+;;(setq frame-resize-pixelwise t)
 
-
-(require 'youdao-dictionary)
-(global-set-key (kbd "<f8>") 'youdao-dictionary-search-at-point+)
 
 (add-hook 'kill-emacs-query-functions
           (lambda () (y-or-n-p "Do you really want to exit Emacs? "))
@@ -56,6 +54,26 @@
 (defun disable-query-add-ctags ()
   (interactive)
   (setq tags-add-tables nil))
+
+
+
+
+
+
+;;
+
+(require-package 'parseedn)
+(require 'cloel)
+
+(require 'blink-search)
+
+
+(require-package 'yasnippet)
+(yas-global-mode 1)
+
+(require 'lsp-bridge)
+(global-lsp-bridge-mode)
+
 
 
 (provide 'init-enhance)

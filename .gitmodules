@@ -40,3 +40,12 @@
 [submodule "site-lisp/all-the-icons-ivy-rich"]
 	path = site-lisp/all-the-icons-ivy-rich
 	url = https://github.com/seagle0128/all-the-icons-ivy-rich.git
+[submodule "site-lisp/cloel"]
+	path = site-lisp/cloel
+	url = https://github.com/manateelazycat/cloel.git
+[submodule "site-lisp/blink-search"]
+	path = site-lisp/blink-search
+	url = https://github.com/manateelazycat/blink-search.git
+[submodule "site-lisp/lsp-bridge"]
+	path = site-lisp/lsp-bridge
+	url = https://github.com/manateelazycat/lsp-bridge.git
