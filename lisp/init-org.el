@@ -369,26 +369,33 @@ typical word processor."
     (define-key org-mode-map (kbd "M-h") nil)
     (define-key org-mode-map (kbd "C-c g") 'grab-mac-link)))
 
+
 (with-eval-after-load 'org
   (org-babel-do-load-languages
    'org-babel-load-languages
-   `(;;(R . t)
-     (ditaa . t)
-     (dot . t)
-     (emacs-lisp . t)
-     (gnuplot . t)
-     (haskell . nil)
-     (latex . t)
-     (ledger . t)
-     (ocaml . nil)
-     (octave . t)
-     (plantuml . t)
-     (python . t)
-     (ruby . t)
-     (screen . nil)
-     (,(if (locate-library "ob-sh") 'sh 'shell) . t)
-     (sql . t)
-     (sqlite . t))))
+   (seq-filter
+    (lambda (pair)
+      (locate-library (concat "ob-" (symbol-name (car pair)))))
+    '((R . t)
+      (ditaa . t)
+      (dot . t)
+      (emacs-lisp . t)
+      (gnuplot . t)
+      (haskell . nil)
+      (latex . t)
+      (ledger . t)
+      (ocaml . nil)
+      (octave . t)
+      (plantuml . t)
+      (python . t)
+      (ruby . t)
+      (screen . nil)
+      (sh . t) ;; obsolete
+      (shell . t)
+      (sql . t)
+      (sqlite . t)))))
+
+
 
 (setq org-agenda-skip-scheduled-if-done t)
 (setq org-agenda-files '("~/org/.todo.org"))

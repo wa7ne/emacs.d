@@ -7,7 +7,7 @@
 (require-package 'projectile)
 (require-package 'popwin)
 (require-package 'web-mode)
-(require-package 'youdao-dictionary)
+;;(require-package 'youdao-dictionary)
 
 
 
