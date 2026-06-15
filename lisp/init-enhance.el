@@ -71,10 +71,9 @@
 (require-package 'yasnippet)
 (yas-global-mode 1)
 
-(require 'lsp-bridge)
-(global-lsp-bridge-mode)
-
-
+;; ipynb 展示
+(require-package 'code-cells)
+(setq code-cells-boundary-regexp "^# %%+.*$")
 
 (provide 'init-enhance)
 ;;; init-enhance.el ends here

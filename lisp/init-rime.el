@@ -84,7 +84,9 @@
 (require 'rime)
 
 ;;; Code:
-(setq rime-user-data-dir "/home/savior/.config/fcitx/rime")
+(setq rime-librime-root "/opt/homebrew/opt/librime")
+(setq rime-emacs-module-header-root "/opt/homebrew/opt/emacs-plus@30/include")
+(setq rime-user-data-dir "~/Library/Rime")
 
 (setq rime-posframe-properties
       (list :background-color "#333333"
